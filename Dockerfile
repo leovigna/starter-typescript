@@ -5,7 +5,7 @@ ENV NODE_ENV development
 RUN npm i --global pnpm
 COPY package.json .
 COPY pnpm-lock.yaml .
-RUN pnpm i
+RUN pnpm i --ignore-scripts
 COPY . .
 RUN npm run build
 
@@ -13,12 +13,10 @@ RUN npm run build
 FROM node:14-alpine
 WORKDIR /usr/src/app
 ENV NODE_ENV production
-ENV MINIMUM_BALANCE 0.2
-ENV TARGET_BALANCE 10
 
 RUN npm i --global pnpm
 COPY --from=0 package.json .
 COPY --from=0 pnpm-lock.yaml .
-RUN pnpm i
+RUN pnpm i --ignore-scripts
 COPY --from=0 lib lib
 CMD ["npm", "start"]
