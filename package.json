@@ -23,8 +23,7 @@
         "lint:staged": "lint-staged",
         "docs": "typedoc",
         "prepare": "husky install && npm run build",
-        "prepublishOnly": "npm run test",
-        "heroku:web": "heroku container:push web && heroku container:release web"
+        "prepublishOnly": "npm run test"
     },
     "dependencies": {
         "dotenv": "^10.0.0"
