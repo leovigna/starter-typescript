@@ -1,12 +1,13 @@
 {
     "compilerOptions": {
-        "sourceMap": true,
+        //ES Module
+        //"module": "esnext",
+        //"moduleResolution": "node",
+        ///"target": "esnext",
+        //"sourceMap": true,
         "outDir": "lib",
         "strict": true,
-        "lib": [
-            "esnext",
-            "dom"
-        ],
+        "lib": ["esnext", "dom"],
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "declaration": true,
